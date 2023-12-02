@@ -1,17 +1,15 @@
 #!/bin/bash
 
-echo "SCRIPT START RUNNING ..."
+echo "MariaDB Setup started ..."
 
 service mariadb start
 
-echo "\
-CREATE DATABASE IF NOT EXISTS ${DB_NAME};\n\
-CREATE USER IF NOT EXISTS '${DB_ADMIN}'@'%' IDENTIFIED BY '${DB_PASSWD}';\n\
-GRANT ALL PRIVILEGES ON ${DB_NAME}.* TO '${DB_ADMIN}'@'%' IDENTIFIED BY '${DB_PASSWD}';\n\
-FLUSH PRIVILEGES;" > script
+echo "CREATE DATABASE IF NOT EXISTS ${DB_NAME};
+CREATE USER IF NOT EXISTS '${DB_ADMIN}'@'%' IDENTIFIED BY '${DB_PASSWD}';
+GRANT ALL PRIVILEGES ON ${DB_NAME}.* TO '${DB_ADMIN}'@'%' IDENTIFIED BY '${DB_PASSWD}';
+FLUSH PRIVILEGES;" > script.sql
 
-
-mysql < script
+mariadb < script.sql
 
 sleep .5
 

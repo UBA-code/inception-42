@@ -1,28 +1,46 @@
 services:
-  nginx-container:
+  nginx:
     build: ./requirements/NGINX/
     container_name: nginx
     ports:
       - 443:443
     volumes:
-      - /home/uba/data/wordPress:/var/www/html/
+      - wordpress:/var/www/html/
     env_file:
       - .env
-  mariadb-container:
+    restart: always
+    depends_on:
+      - wordpress
+  mariadb:
     build: ./requirements/mariadb
     container_name: mariadb
     env_file:
       - .env
     volumes:
-      - /home/uba/data/mysql:/var/lib/mysql
-    depends_on:
-      - nginx-container
-  wordpress-contrainer:
+      - mariadb:/var/lib/mysql
+    restart: always
+  wordpress:
     build: ./requirements/wordPress/
     container_name: wordPress
     env_file:
       - .env
     depends_on:
-      - mariadb-container
+      - mariadb
+        # condition: service_started
     volumes:
-      - /home/uba/data/wordPress:/var/www/html
+      - wordpress:/var/www/html
+    restart: always
+
+volumes:
+  mariadb:
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/uba/data/mariadb
+      o: bind
+  wordpress:
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/uba/data/wordpress
+      o: bind
