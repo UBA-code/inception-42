@@ -1,18 +1,11 @@
-IMG_ONE = nginx-img
-SRCS = ./srcs/docker-compose.yaml
-
 build:
-	docker-compose -f $(SRCS) build
-
-build-no-cache:
-	docker-compose -f $(SRCS) build --no-cache
+	docker-compose -f ./srcs/docker-compose.yml build
 
 up:
-	docker-compose -f $(SRCS) up -d
+	docker-compose -f ./srcs/docker-compose.yml up -d
 
 down:
-	docker-compose -f $(SRCS) down
-
+	docker-compose -f ./srcs/docker-compose.yml down
 
 clean:
-	docker-compose -f $(SRCS) rm -f
+	docker-compose -f ./srcs/docker-compose.yml down -v
