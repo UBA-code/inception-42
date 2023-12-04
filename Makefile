@@ -8,7 +8,11 @@ build-no-cache:
 	docker-compose -f $(SRCS) build --no-cache
 
 up:
-	docker-compose -f $(SRCS) up
+	docker-compose -f $(SRCS) up -d
+
+down:
+	docker-compose -f $(SRCS) down
+
 
 clean:
 	docker-compose -f $(SRCS) rm -f

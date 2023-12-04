@@ -2,11 +2,6 @@
 
 echo "WordPress Setup started ..."
 
-# until mariadb -h mariadb -u $DB_ADMIN -p$DB_PASSWD; do
-# echo "MariaDB is unavailable - sleeping"
-# sleep 1
-# done
-
 cp wp-config-sample.php wp-config.php
 sed -i "s/database_name_here/${DB_NAME}/" wp-config.php
 sed -i "s/username_here/${DB_ADMIN}/" wp-config.php
