@@ -3,7 +3,7 @@ FROM debian:stable
 
 WORKDIR /var/www/html
 
-RUN apt update && apt install php php-mysql php-fpm curl -y
+RUN apt-get update && apt-get install php php-mysql php-fpm php-redis curl -y
 
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
     chmod +x wp-cli.phar && \
