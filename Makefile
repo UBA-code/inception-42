@@ -14,5 +14,5 @@ clean:
 re:
 	make down
 	make clean
-	sudo rm -rf /home/uba/data/wordpress/* /home/uba/data/mariadb/*
+	sudo rm -rf /home/ybel-hac/data/wordpress/* /home/ybel-hac/data/mariadb/*
 	make

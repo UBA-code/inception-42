@@ -77,11 +77,15 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /home/uba/data/mariadb
+      device: /home/ybel-hac/data/mariadb
       o: bind
   wordpress:
     driver: local
     driver_opts:
       type: none
-      device: /home/uba/data/wordpress
+      device: /home/ybel-hac/data/wordpress
       o: bind
+
+networks:
+  inception:
+    driver: bridge
