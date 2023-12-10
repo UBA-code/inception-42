@@ -51,9 +51,26 @@ services:
       - 21:21
       - 20:20
       - "20000-20010:20000-20010"
-
-
-
+  static-website:
+    build: ./requirements/bonus/static_website
+    container_name: static-website
+    restart: always
+    ports:
+      - 3000:3000
+  adminer:
+    build: ./requirements/bonus/adminer/
+    container_name: adminer
+    restart: always
+    volumes:
+      - wordpress:/var/www/html
+    depends_on:
+      - wordpress
+  cadvisor:
+    build: ./requirements/bonus/cadvisor
+    container_name: cadvisor
+    restart: always
+    ports:
+      - 8080:8080
 
 volumes:
   mariadb:

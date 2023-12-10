@@ -14,5 +14,5 @@ clean:
 re:
 	make down
 	make clean
-	rm -rf data/wordpress/* && rm -rf data/mariadb/*
+	sudo rm -rf /home/uba/data/wordpress/* /home/uba/data/mariadb/*
 	make
