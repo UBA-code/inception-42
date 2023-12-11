@@ -1,0 +1,26 @@
+#? mariadb info
+DB_NAME = 
+DB_ADMIN = 
+DB_ADMIN_PASSWD = 
+
+#? wordPress info
+#* admin user info
+WP_ADMIN = 
+WP_ADMIN_PASSWD = 
+WP_ADMIN_EMAIL = 
+#* new user info
+WP_USER = 
+WP_PASSWD = 
+WP_EMAIL = 
+WP_ROLE = 
+
+#? nginx info
+DOMAIN_NAME = 
+
+
+# #? redis info
+# REDIS_PASSWORD = redis123
+
+#? FTP info
+FTP_USER = 
+FTP_PASSWD = 
