@@ -1,2 +1,11 @@
 https://adamtheautomator.com/vsftpd/ vsftpd configuration
 https://awesome-docker.netlify.app/  extra services
+https://github.com/llescure/42_Inception tutorial
+https://tech.osteel.me/posts/docker-for-local-web-development-part-1-a-basic-lemp-stack tutorial
+https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-docker-compose install wordpress
+https://medium.com/rate-engineering/using-docker-containers-to-run-a-distributed-application-locally-eeabd360bca3 docker compose
+https://www.educative.io/blog/docker-compose-tutorial docker and docker compose in deep
+https://cloud.google.com/architecture/best-practices-for-building-containers docker deep informations
+https://www.educative.io/blog/top-40-docker-interview-questions interview questions
+
+https://spacelift.io/blog/docker-entrypoint-vs-cmd different between CMD & ENTRYPOINT in dockerfile 😄

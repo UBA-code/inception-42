@@ -6,7 +6,7 @@ build-no-cache:
 	docker-compose -f ./srcs/docker-compose.yml build --no-cache
 
 down:
-	docker-compose -f ./srcs/docker-compose.yml kill
+	docker-compose -f ./srcs/docker-compose.yml down
 
 clean:
 	docker-compose -f ./srcs/docker-compose.yml down -v
